@@ -3,6 +3,8 @@ import BentoGrid from "@/components/BentoGrid";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-bg-primary">
@@ -18,25 +20,25 @@ export default function Home() {
             title="Capitol Trades"
             category="Full-Stack Development"
             description="Congressional stock trading tracker with real-time API integration, ROI calculations, and party-level analytics."
-            imageUrl="/projects/capitol-trades.png"
+            imageUrl={`${basePath}/projects/capitol-trades.png`}
           />
           <ProjectCard
             title="Biotech Unicorns Dashboard"
             category="Data Analytics"
             description="Interactive platform tracking 112 biotech companies worth $526B with patent and funding analysis."
-            imageUrl="/projects/biotech-v2.png"
+            imageUrl={`${basePath}/projects/biotech-v2.png`}
           />
           <ProjectCard
             title="Geopolitical Marketing"
             category="Machine Learning"
             description="Real-time ML-powered salience scoring to optimize ad spend based on geopolitical events."
-            imageUrl="/projects/geopolitical-dashboard.png"
+            imageUrl={`${basePath}/projects/geopolitical-dashboard.png`}
           />
           <ProjectCard
             title="401k Work Tracker"
             category="Business Intelligence"
             description="Power BI dashboard tracking retirement plan workflows across multiple compliance stages."
-            imageUrl="/projects/401k-v2.png"
+            imageUrl={`${basePath}/projects/401k-v2.png`}
           />
         </BentoGrid>
 

@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 // Featured personal projects with screenshots
 const featuredProjects = [
   {
     title: 'Capitol Trades',
     description: 'Congressional stock trading tracker aggregating STOCK Act disclosures to analyze trading patterns of US lawmakers. Features real-time data scraping, ROI calculations, and party-level comparisons with interactive visualizations.',
-    image: '/projects/capitol-trades.png',
+    image: `${basePath}/projects/capitol-trades.png`,
     tags: ['React', 'TypeScript', 'Vite', 'Recharts', 'Tailwind CSS', 'Node.js', 'REST API'],
     features: ['Live API Integration', 'Top Performer Rankings', 'Sector Analysis', 'Party Comparison'],
     category: 'engineering',
@@ -15,7 +17,7 @@ const featuredProjects = [
   {
     title: 'Geopolitical Marketing Dashboard',
     description: 'Real-time monitoring system for political context and marketing campaign performance. Uses ML-based salience scoring to optimize ad spend timing based on geopolitical events and sentiment analysis.',
-    image: '/projects/geopolitical-dashboard.png',
+    image: `${basePath}/projects/geopolitical-dashboard.png`,
     tags: ['Python', 'Flask', 'Plotly', 'GDELT API', 'BigQuery', 'Machine Learning', 'XGBoost'],
     features: ['Real-time Salience Tracking', 'Campaign Simulation', 'Engagement Analytics', 'Alert System'],
     category: 'ai',
@@ -23,7 +25,7 @@ const featuredProjects = [
   {
     title: 'Biotech & Healthcare Unicorns Dashboard',
     description: 'Interactive analytics platform tracking 112 biotech unicorn companies worth $526B in total value. Features advanced filtering by category, valuation range, patent portfolio, and company status with deep-dive analysis capabilities.',
-    image: '/projects/biotech-v2.png',
+    image: `${basePath}/projects/biotech-v2.png`,
     tags: ['Python', 'Streamlit', 'Data Visualization', 'BigQuery', 'Pandas'],
     features: ['Company Deep Dives', 'Patent Analysis', 'Funding Journey Tracking', 'News Aggregation'],
     category: 'analytics',
@@ -31,7 +33,7 @@ const featuredProjects = [
   {
     title: '401k Work Tracker Dashboard',
     description: 'Power BI dashboard for tracking retirement plan administration workflows. Monitors work units across multiple compliance stages with real-time supervisor and employee performance metrics.',
-    image: '/projects/401k-v2.png',
+    image: `${basePath}/projects/401k-v2.png`,
     tags: ['Power BI', 'DAX', 'SQL', 'Data Modeling'],
     features: ['Multi-dimensional Filtering', 'Supervisor Analytics', 'Plan Status Tracking', 'Completion Metrics'],
     category: 'analytics',
