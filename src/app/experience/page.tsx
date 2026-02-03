@@ -1,5 +1,7 @@
 'use client';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 const experiences = [
   {
     title: 'Data Analyst',
@@ -198,7 +200,7 @@ export default function Experience() {
               Interested in my full resume?
             </p>
             <a
-              href="/resume.pdf"
+              href={`${basePath}/resume.pdf`}
               className="btn-primary inline-flex items-center gap-2"
               download
             >
