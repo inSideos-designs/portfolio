@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="text-2xl md:text-4xl font-medium text-text-secondary animate-fade-in-scale [animation-delay:200ms] opacity-0 mt-2">
           <span>I&apos;m a </span>
           <TypeWriter
-            words={["Data Analyst", "ML Engineer", "Problem Solver", "Python Developer", "Dashboard Builder"]}
+            words={["Data Analyst", "Marine", "ML Engineer", "Problem Solver", "Python Developer", "Dashboard Builder"]}
             typeSpeed={80}
             deleteSpeed={40}
             delayBetween={2000}
