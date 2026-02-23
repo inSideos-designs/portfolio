@@ -38,6 +38,30 @@ const featuredProjects = [
     features: ['Multi-dimensional Filtering', 'Supervisor Analytics', 'Plan Status Tracking', 'Completion Metrics'],
     category: 'analytics',
   },
+  {
+    title: 'OilSight',
+    description: 'Geospatial analytics platform predicting oil & gas production hotspots by analyzing surface topography and subsurface deposit correlations. Uses USGS 3DEP elevation models with ML-driven terrain feature extraction across 8 major US basins.',
+    image: `${basePath}/projects/oilsight.png`,
+    tags: ['Python', 'Flask', 'D3.js', 'Leaflet', 'XGBoost', 'HDBSCAN', 'GeoPandas'],
+    features: ['Hotspot Prediction', 'Terrain Analysis', 'Basin Comparison', 'Production Analytics'],
+    category: 'ai',
+  },
+  {
+    title: 'Midpoint',
+    description: 'Web app that finds the perfect meeting spot between two locations. Calculates geographic midpoints, displays drive times from each person, and recommends nearby restaurants with ratings and reviews using Google Maps and Places APIs.',
+    image: `${basePath}/projects/midpoint.png`,
+    tags: ['React', 'Vite', 'Google Maps API', 'Google Places API', 'JavaScript'],
+    features: ['Midpoint Calculation', 'Restaurant Discovery', 'Drive Time Estimates', 'Interactive Map'],
+    category: 'engineering',
+  },
+  {
+    title: 'NPPG Productivity Dashboard',
+    description: 'Real-time productivity tracking dashboard for fiduciary operations. Monitors completion rates across work types, tracks TPA admin performance metrics, and provides multi-dimensional filtering for plan year, status, and location.',
+    image: `${basePath}/projects/nppg-dashboard.png`,
+    tags: ['Python', 'Flask', 'Plotly', 'Pandas', 'HTML/CSS', 'JavaScript'],
+    features: ['Completion Tracking', 'Work Type Breakdown', 'Admin Performance', 'Dynamic Filtering'],
+    category: 'analytics',
+  },
 ];
 
 const projects = [
@@ -82,6 +106,27 @@ const projects = [
     impact: 'Significantly reduced error rates in compliance reporting',
     tags: ['SQL', 'SSMS', 'Data Quality', 'Validation'],
     category: 'engineering',
+  },
+];
+
+const inProgressProjects = [
+  {
+    title: 'Velox',
+    description: 'Fast LLM inference framework optimized for Apple Silicon. Leverages the Neural Engine and Metal GPU acceleration to run large language models efficiently on macOS with an interactive CLI and HTTP API server.',
+    tags: ['Swift', 'MLX', 'Core ML', 'Metal', 'Swift NIO'],
+    category: 'ai',
+  },
+  {
+    title: 'AutoClip',
+    description: 'Fully automated pipeline for generating and publishing viral short-form videos. Scrapes trending topics, generates scripts with Gemini AI, creates voiceovers via ElevenLabs, produces visuals, and auto-publishes to TikTok, YouTube Shorts, and Instagram Reels.',
+    tags: ['Python', 'Google Gemini', 'ElevenLabs', 'MoviePy', 'Playwright', 'SQLite'],
+    category: 'ai',
+  },
+  {
+    title: 'MetalDiffuser',
+    description: 'Metal GPU-accelerated diffusion model for high-performance image generation natively on Apple Silicon. Implements Stable Diffusion inference using Metal compute shaders and Core ML optimizations.',
+    tags: ['Swift', 'Metal', 'Core ML', 'Diffusion Models'],
+    category: 'ai',
   },
 ];
 
@@ -171,6 +216,60 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* In Progress */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-semibold mb-2 animate-fade-in-scale [animation-delay:300ms] opacity-0">
+            In Progress
+          </h2>
+          <p className="text-text-secondary text-sm mb-8 animate-fade-in-scale [animation-delay:350ms] opacity-0">
+            Currently building
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {inProgressProjects.map((project, index) => (
+              <div
+                key={index}
+                className="glass-card overflow-hidden card-hover animate-fade-in-scale relative"
+                style={{ animationDelay: `${(index + 4) * 100}ms`, opacity: 0 }}
+              >
+                {/* In Progress Badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs font-medium flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
+                    In Progress
+                  </span>
+                </div>
+
+                <div className={`h-28 flex items-center justify-center ${
+                  project.category === 'ai'
+                    ? 'bg-gradient-to-br from-purple-500/20 to-purple-500/5'
+                    : project.category === 'engineering'
+                    ? 'bg-gradient-to-br from-green-500/20 to-green-500/5'
+                    : 'bg-gradient-to-br from-accent-blue/20 to-accent-blue/5'
+                }`}>
+                  <svg className="w-12 h-12 text-purple-500/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold mb-2 text-text-primary">{project.title}</h3>
+                  <p className="text-text-secondary text-xs mb-4 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2 py-0.5 bg-bg-primary/50 rounded-full text-xs text-text-secondary"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

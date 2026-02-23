@@ -17,10 +17,28 @@ export default function Home() {
 
         <BentoGrid>
           <ProjectCard
+            title="OilSight"
+            category="AI & Geospatial Analytics"
+            description="ML platform predicting oil & gas hotspots using USGS elevation models and terrain feature extraction across 8 US basins."
+            imageUrl={`${basePath}/projects/oilsight.png`}
+          />
+          <ProjectCard
             title="Capitol Trades"
             category="Full-Stack Development"
             description="Congressional stock trading tracker with real-time API integration, ROI calculations, and party-level analytics."
             imageUrl={`${basePath}/projects/capitol-trades.png`}
+          />
+          <ProjectCard
+            title="Midpoint"
+            category="Full-Stack Development"
+            description="Find the perfect meeting spot between two locations with drive times and nearby restaurant recommendations."
+            imageUrl={`${basePath}/projects/midpoint.png`}
+          />
+          <ProjectCard
+            title="NPPG Productivity Dashboard"
+            category="Data Analytics"
+            description="Real-time productivity tracking for fiduciary operations with completion metrics and TPA admin performance."
+            imageUrl={`${basePath}/projects/nppg-dashboard.png`}
           />
           <ProjectCard
             title="Biotech Unicorns Dashboard"
@@ -33,12 +51,6 @@ export default function Home() {
             category="Machine Learning"
             description="Real-time ML-powered salience scoring to optimize ad spend based on geopolitical events."
             imageUrl={`${basePath}/projects/geopolitical-dashboard.png`}
-          />
-          <ProjectCard
-            title="401k Work Tracker"
-            category="Business Intelligence"
-            description="Power BI dashboard tracking retirement plan workflows across multiple compliance stages."
-            imageUrl={`${basePath}/projects/401k-v2.png`}
           />
         </BentoGrid>
 
