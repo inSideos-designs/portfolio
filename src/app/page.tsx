@@ -35,12 +35,6 @@ export default function Home() {
             imageUrl={`${basePath}/projects/midpoint.png`}
           />
           <ProjectCard
-            title="NPPG Productivity Dashboard"
-            category="Data Analytics"
-            description="Real-time productivity tracking for fiduciary operations with completion metrics and TPA admin performance."
-            imageUrl={`${basePath}/projects/nppg-dashboard.png`}
-          />
-          <ProjectCard
             title="Biotech Unicorns Dashboard"
             category="Data Analytics"
             description="Interactive platform tracking 112 biotech companies worth $526B with patent and funding analysis."

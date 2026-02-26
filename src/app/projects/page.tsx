@@ -31,14 +31,6 @@ const featuredProjects = [
     category: 'analytics',
   },
   {
-    title: '401k Work Tracker Dashboard',
-    description: 'Power BI dashboard for tracking retirement plan administration workflows. Monitors work units across multiple compliance stages with real-time supervisor and employee performance metrics.',
-    image: `${basePath}/projects/401k-v2.png`,
-    tags: ['Power BI', 'DAX', 'SQL', 'Data Modeling'],
-    features: ['Multi-dimensional Filtering', 'Supervisor Analytics', 'Plan Status Tracking', 'Completion Metrics'],
-    category: 'analytics',
-  },
-  {
     title: 'OilSight',
     description: 'Geospatial analytics platform predicting oil & gas production hotspots by analyzing surface topography and subsurface deposit correlations. Uses USGS 3DEP elevation models with ML-driven terrain feature extraction across 8 major US basins.',
     image: `${basePath}/projects/oilsight.png`,
@@ -53,14 +45,6 @@ const featuredProjects = [
     tags: ['React', 'Vite', 'Google Maps API', 'Google Places API', 'JavaScript'],
     features: ['Midpoint Calculation', 'Restaurant Discovery', 'Drive Time Estimates', 'Interactive Map'],
     category: 'engineering',
-  },
-  {
-    title: 'NPPG Productivity Dashboard',
-    description: 'Real-time productivity tracking dashboard for fiduciary operations. Monitors completion rates across work types, tracks TPA admin performance metrics, and provides multi-dimensional filtering for plan year, status, and location.',
-    image: `${basePath}/projects/nppg-dashboard.png`,
-    tags: ['Python', 'Flask', 'Plotly', 'Pandas', 'HTML/CSS', 'JavaScript'],
-    features: ['Completion Tracking', 'Work Type Breakdown', 'Admin Performance', 'Dynamic Filtering'],
-    category: 'analytics',
   },
 ];
 
