@@ -17,6 +17,18 @@ export default function Home() {
 
         <BentoGrid>
           <ProjectCard
+            title="NPPG Predictive Analytics"
+            category="Data Engineering & ML"
+            description="End-to-end data platform with 24 automated pipelines, 6 ML models, and real-time dashboards for 14K+ pension plans."
+            imageUrl={`${basePath}/projects/nppg-analytics.png`}
+          />
+          <ProjectCard
+            title="Biotech Unicorns Intelligence"
+            category="AI & Full-Stack"
+            description="AI-enriched platform tracking 112 biotech unicorns worth $526B with Gemini-powered patent and SEC analysis."
+            imageUrl={`${basePath}/projects/biotech-v2.png`}
+          />
+          <ProjectCard
             title="OilSight"
             category="AI & Geospatial Analytics"
             description="ML platform predicting oil & gas hotspots using USGS elevation models and terrain feature extraction across 8 US basins."
@@ -33,12 +45,6 @@ export default function Home() {
             category="Full-Stack Development"
             description="Find the perfect meeting spot between two locations with drive times and nearby restaurant recommendations."
             imageUrl={`${basePath}/projects/midpoint.png`}
-          />
-          <ProjectCard
-            title="Biotech Unicorns Dashboard"
-            category="Data Analytics"
-            description="Interactive platform tracking 112 biotech companies worth $526B with patent and funding analysis."
-            imageUrl={`${basePath}/projects/biotech-v2.png`}
           />
           <ProjectCard
             title="Geopolitical Marketing"

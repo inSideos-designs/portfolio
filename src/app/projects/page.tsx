@@ -7,6 +7,14 @@ const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 // Featured personal projects with screenshots
 const featuredProjects = [
   {
+    title: 'NPPG Predictive Analytics',
+    description: 'End-to-end data platform for pension plan compliance and risk analytics, managing 14,000+ retirement plans. Features 24 automated Dagster pipelines, 6 ML models for compliance prediction and churn detection, and a real-time executive dashboard with network analysis.',
+    image: `${basePath}/projects/nppg-analytics.png`,
+    tags: ['Python', 'Dagster', 'scikit-learn', 'FastAPI', 'Next.js', 'React', 'SQL Server'],
+    features: ['24 Automated Pipelines', 'ML Compliance Prediction', 'Network Analysis', 'Risk Scoring'],
+    category: 'ai',
+  },
+  {
     title: 'Capitol Trades',
     description: 'Congressional stock trading tracker aggregating STOCK Act disclosures to analyze trading patterns of US lawmakers. Features real-time data scraping, ROI calculations, and party-level comparisons with interactive visualizations.',
     image: `${basePath}/projects/capitol-trades.png`,
@@ -23,12 +31,12 @@ const featuredProjects = [
     category: 'ai',
   },
   {
-    title: 'Biotech & Healthcare Unicorns Dashboard',
-    description: 'Interactive analytics platform tracking 112 biotech unicorn companies worth $526B in total value. Features advanced filtering by category, valuation range, patent portfolio, and company status with deep-dive analysis capabilities.',
+    title: 'Biotech Unicorns Intelligence Platform',
+    description: 'Real-time intelligence platform built for Riceberg Ventures tracking 112 biotech unicorns worth $526B. AI-enriched patent analysis, SEC filing insights, clinical trials, and news sentiment powered by Gemini 2.5 Flash with automated enrichment pipelines on Google Cloud.',
     image: `${basePath}/projects/biotech-v2.png`,
-    tags: ['Python', 'Streamlit', 'Data Visualization', 'BigQuery', 'Pandas'],
-    features: ['Company Deep Dives', 'Patent Analysis', 'Funding Journey Tracking', 'News Aggregation'],
-    category: 'analytics',
+    tags: ['Next.js', 'React', 'Flask', 'BigQuery', 'Gemini AI', 'Google Cloud', 'Recharts'],
+    features: ['AI-Enriched Patent Analysis', 'SEC Filing Insights', 'Clinical Trials Tracking', 'News Sentiment'],
+    category: 'ai',
   },
   {
     title: 'OilSight',

@@ -8,43 +8,45 @@ const skillCategories = [
     skills: [
       { name: 'Python', level: 95 },
       { name: 'SQL', level: 95 },
-      { name: 'R', level: 75 },
-      { name: 'JavaScript', level: 70 },
+      { name: 'TypeScript', level: 80 },
+      { name: 'JavaScript', level: 80 },
     ],
   },
   {
     title: 'Machine Learning',
     skills: [
+      { name: 'Scikit-learn', level: 90 },
       { name: 'TensorFlow', level: 80 },
-      { name: 'Scikit-learn', level: 85 },
-      { name: 'NLP', level: 75 },
+      { name: 'XGBoost', level: 85 },
       { name: 'RAG Systems', level: 80 },
     ],
   },
   {
-    title: 'Visualization',
+    title: 'Data Engineering',
     skills: [
-      { name: 'Power BI', level: 95 },
-      { name: 'Tableau', level: 90 },
-      { name: 'DAX', level: 90 },
-      { name: 'Matplotlib', level: 85 },
+      { name: 'Dagster', level: 90 },
+      { name: 'FastAPI / Flask', level: 85 },
+      { name: 'ETL Pipelines', level: 95 },
+      { name: 'pandas / NumPy', level: 90 },
     ],
   },
   {
-    title: 'Cloud & Data',
+    title: 'Cloud & Databases',
     skills: [
-      { name: 'AWS', level: 80 },
+      { name: 'Google Cloud', level: 85 },
+      { name: 'BigQuery', level: 85 },
       { name: 'SQL Server', level: 90 },
-      { name: 'PostgreSQL', level: 85 },
-      { name: 'BigQuery', level: 75 },
+      { name: 'AWS', level: 80 },
     ],
   },
 ];
 
 const tools = [
-  'Python', 'SQL', 'Power BI', 'Tableau', 'AWS', 'GCP',
-  'TensorFlow', 'pandas', 'NumPy', 'Docker', 'Git',
-  'PostgreSQL', 'MongoDB', 'Jupyter', 'VS Code', 'PyTorch'
+  'Python', 'SQL', 'TypeScript', 'React', 'Next.js',
+  'Dagster', 'FastAPI', 'Flask', 'Scikit-learn', 'XGBoost',
+  'Google Cloud', 'BigQuery', 'AWS', 'SQL Server', 'PostgreSQL',
+  'Power BI', 'Tableau', 'Recharts', 'D3.js',
+  'pandas', 'NumPy', 'Docker', 'Git',
 ];
 
 function SkillBar({ name, level, animate }: { name: string; level: number; animate: boolean }) {
