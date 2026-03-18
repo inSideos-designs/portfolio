@@ -61,7 +61,7 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
 const featuredProjects = [
   {
     title: 'NPPG Predictive Analytics',
-    description: 'Production ML platform scoring 13,905 pension plans managing $500M+ in retirement assets. 7 models (0.911 AUC correction risk, 0.986 AUC churn) generate 53,000 predictions per nightly run. Graph-based risk propagation using NetworkX/Louvain community detection surfaces compliance contagion across recordkeeper ecosystems. Out-of-time backtesting confirms reviewing 12% of plans catches 39% of failures (3.3x triage lift). Used daily by 10 senior executives.',
+    description: 'Production ML platform scoring 13,905 financial plans managing $500M+ in assets. 7 models (0.911 AUC risk prediction, 0.986 AUC churn) generate 53,000 predictions per nightly run. Graph-based risk propagation using NetworkX/Louvain community detection surfaces hidden failure patterns across linked entities. Out-of-time backtesting confirms reviewing 12% of plans catches 39% of failures (3.3x triage lift). Used daily by 10 senior executives.',
     images: [
       `${basePath}/projects/nppg-pipelines.jpeg`,
       `${basePath}/projects/nppg-analytics.png`,
@@ -120,8 +120,8 @@ const featuredProjects = [
 const projects = [
   {
     title: 'Enterprise Power BI Analytics Platform',
-    description: 'Engineered executive reporting layer with 40+ custom DAX measures modeling the full 8-stage compliance lifecycle (census collection through government filing). Gave CFO first-ever visibility into workflow bottlenecks across 13K+ work units.',
-    impact: 'Reduced monthly board reporting prep by 80%, supporting $500M+ in retirement plan assets',
+    description: 'Engineered executive reporting layer with 40+ custom DAX measures modeling a full 8-stage operational lifecycle. Gave CFO first-ever visibility into workflow bottlenecks across 13K+ work units.',
+    impact: 'Reduced monthly board reporting prep by 80%, supporting $500M+ in managed assets',
     tags: ['Power BI', 'DAX', 'ETL', 'Data Modeling'],
     category: 'analytics',
   },

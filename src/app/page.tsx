@@ -19,7 +19,7 @@ export default function Home() {
           <ProjectCard
             title="NPPG Predictive Analytics"
             category="Data Engineering & ML"
-            description="Production ML platform generating 53,000 predictions per nightly run across 13,905 pension plans. 0.911 AUC risk model, graph-based compliance analytics, used daily by 10 senior executives."
+            description="Production ML platform generating 53,000 predictions per nightly run across 13,905 financial plans. 0.911 AUC risk model, graph-based analytics, used daily by 10 senior executives."
             imageUrl={`${basePath}/projects/nppg-pipelines.jpeg`}
           />
           <ProjectCard
