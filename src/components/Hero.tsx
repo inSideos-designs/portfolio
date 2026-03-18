@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="text-2xl md:text-4xl font-medium text-text-secondary animate-fade-in-scale [animation-delay:200ms] opacity-0 mt-2">
           <span>I&apos;m a </span>
           <TypeWriter
-            words={["Data Analyst", "Marine", "ML Engineer", "Problem Solver", "Python Developer", "Dashboard Builder"]}
+            words={["Data Analyst", "Marine", "an ML Engineer", "Problem Solver", "Python Developer", "Dashboard Builder"]}
             typeSpeed={80}
             deleteSpeed={40}
             delayBetween={2000}
@@ -26,7 +26,7 @@ const Hero = () => {
         </div>
 
         <p className="max-w-xl text-lg md:text-xl leading-relaxed text-text-secondary mt-6 animate-fade-in-scale [animation-delay:300ms] opacity-0">
-          Self-driven data professional passionate about transforming complex datasets into actionable insights. Currently pursuing M.S. in Computational Data Analytics at Georgia Tech.
+          Data engineer and ML practitioner who builds production systems that replace manual workflows. Currently scoring 13,905 pension plans nightly with 7 ML models at NPPG while pursuing M.S. in Computational Data Analytics at Georgia Tech.
         </p>
 
         <div className="flex gap-4 mt-8 animate-fade-in-scale [animation-delay:400ms] opacity-0">

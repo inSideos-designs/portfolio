@@ -4,20 +4,81 @@ import { useState } from 'react';
 
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
+function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [current, setCurrent] = useState(0);
+
+  if (images.length <= 1) {
+    return (
+      <img src={images[0]} alt={alt} className="w-full h-full object-cover object-top" />
+    );
+  }
+
+  return (
+    <div className="relative w-full h-full group">
+      <img
+        src={images[current]}
+        alt={`${alt} - ${current + 1}`}
+        className="w-full h-full object-cover object-top transition-opacity duration-300"
+      />
+
+      {/* Previous */}
+      <button
+        onClick={(e) => { e.stopPropagation(); setCurrent((current - 1 + images.length) % images.length); }}
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      {/* Next */}
+      <button
+        onClick={(e) => { e.stopPropagation(); setCurrent((current + 1) % images.length); }}
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={(e) => { e.stopPropagation(); setCurrent(idx); }}
+            className={`w-1.5 h-1.5 rounded-full transition-all ${
+              idx === current ? 'bg-white w-3' : 'bg-white/50'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // Featured personal projects with screenshots
 const featuredProjects = [
   {
     title: 'NPPG Predictive Analytics',
-    description: 'End-to-end data platform for pension plan compliance and risk analytics, managing 14,000+ retirement plans. Features 24 automated Dagster pipelines, 6 ML models for compliance prediction and churn detection, and a real-time executive dashboard with network analysis.',
-    image: `${basePath}/projects/nppg-analytics.png`,
+    description: 'Production ML platform scoring 13,905 pension plans managing $500M+ in retirement assets. 7 models (0.911 AUC correction risk, 0.986 AUC churn) generate 53,000 predictions per nightly run. Graph-based risk propagation using NetworkX/Louvain community detection surfaces compliance contagion across recordkeeper ecosystems. Out-of-time backtesting confirms reviewing 12% of plans catches 39% of failures (3.3x triage lift). Used daily by 10 senior executives.',
+    images: [
+      `${basePath}/projects/nppg-pipelines.jpeg`,
+      `${basePath}/projects/nppg-analytics.png`,
+      `${basePath}/projects/nppg-models.png`,
+      `${basePath}/projects/nppg-season-analytics.jpeg`,
+      `${basePath}/projects/nppg-compliance.png`,
+      `${basePath}/projects/nppg-network.png`,
+      `${basePath}/projects/nppg-analytics-view.png`,
+    ],
     tags: ['Python', 'Dagster', 'scikit-learn', 'FastAPI', 'Next.js', 'React', 'SQL Server'],
-    features: ['24 Automated Pipelines', 'ML Compliance Prediction', 'Network Analysis', 'Risk Scoring'],
+    features: ['53K Predictions/Run', '0.911 AUC Risk Model', 'Graph Network Analysis', '3.3x Triage Lift'],
     category: 'ai',
   },
   {
     title: 'Capitol Trades',
     description: 'Congressional stock trading tracker aggregating STOCK Act disclosures to analyze trading patterns of US lawmakers. Features real-time data scraping, ROI calculations, and party-level comparisons with interactive visualizations.',
-    image: `${basePath}/projects/capitol-trades.png`,
+    images: [`${basePath}/projects/capitol-trades.png`],
     tags: ['React', 'TypeScript', 'Vite', 'Recharts', 'Tailwind CSS', 'Node.js', 'REST API'],
     features: ['Live API Integration', 'Top Performer Rankings', 'Sector Analysis', 'Party Comparison'],
     category: 'engineering',
@@ -25,7 +86,7 @@ const featuredProjects = [
   {
     title: 'Geopolitical Marketing Dashboard',
     description: 'Real-time monitoring system for political context and marketing campaign performance. Uses ML-based salience scoring to optimize ad spend timing based on geopolitical events and sentiment analysis.',
-    image: `${basePath}/projects/geopolitical-dashboard.png`,
+    images: [`${basePath}/projects/geopolitical-dashboard.png`],
     tags: ['Python', 'Flask', 'Plotly', 'GDELT API', 'BigQuery', 'Machine Learning', 'XGBoost'],
     features: ['Real-time Salience Tracking', 'Campaign Simulation', 'Engagement Analytics', 'Alert System'],
     category: 'ai',
@@ -33,7 +94,7 @@ const featuredProjects = [
   {
     title: 'Biotech Unicorns Intelligence Platform',
     description: 'Real-time intelligence platform built for Riceberg Ventures tracking 112 biotech unicorns worth $526B. AI-enriched patent analysis, SEC filing insights, clinical trials, and news sentiment powered by Gemini 2.5 Flash with automated enrichment pipelines on Google Cloud.',
-    image: `${basePath}/projects/biotech-v2.png`,
+    images: [`${basePath}/projects/biotech-v2.png`],
     tags: ['Next.js', 'React', 'Flask', 'BigQuery', 'Gemini AI', 'Google Cloud', 'Recharts'],
     features: ['AI-Enriched Patent Analysis', 'SEC Filing Insights', 'Clinical Trials Tracking', 'News Sentiment'],
     category: 'ai',
@@ -41,7 +102,7 @@ const featuredProjects = [
   {
     title: 'OilSight',
     description: 'Geospatial analytics platform predicting oil & gas production hotspots by analyzing surface topography and subsurface deposit correlations. Uses USGS 3DEP elevation models with ML-driven terrain feature extraction across 8 major US basins.',
-    image: `${basePath}/projects/oilsight.png`,
+    images: [`${basePath}/projects/oilsight.png`],
     tags: ['Python', 'Flask', 'D3.js', 'Leaflet', 'XGBoost', 'HDBSCAN', 'GeoPandas'],
     features: ['Hotspot Prediction', 'Terrain Analysis', 'Basin Comparison', 'Production Analytics'],
     category: 'ai',
@@ -49,7 +110,7 @@ const featuredProjects = [
   {
     title: 'Midpoint',
     description: 'Web app that finds the perfect meeting spot between two locations. Calculates geographic midpoints, displays drive times from each person, and recommends nearby restaurants with ratings and reviews using Google Maps and Places APIs.',
-    image: `${basePath}/projects/midpoint.png`,
+    images: [`${basePath}/projects/midpoint.png`],
     tags: ['React', 'Vite', 'Google Maps API', 'Google Places API', 'JavaScript'],
     features: ['Midpoint Calculation', 'Restaurant Discovery', 'Drive Time Estimates', 'Interactive Map'],
     category: 'engineering',
@@ -59,8 +120,8 @@ const featuredProjects = [
 const projects = [
   {
     title: 'Enterprise Power BI Analytics Platform',
-    description: 'Partnered with CFO to deliver enterprise analytics platform for ERISA 3(16) fiduciary operations. Engineered 40+ DAX measures tracking 13K+ work units across 8 compliance stages.',
-    impact: 'Reduced reporting prep by 80%, supporting $500M+ in retirement plan assets',
+    description: 'Engineered executive reporting layer with 40+ custom DAX measures modeling the full 8-stage compliance lifecycle (census collection through government filing). Gave CFO first-ever visibility into workflow bottlenecks across 13K+ work units.',
+    impact: 'Reduced monthly board reporting prep by 80%, supporting $500M+ in retirement plan assets',
     tags: ['Power BI', 'DAX', 'ETL', 'Data Modeling'],
     category: 'analytics',
   },
@@ -165,11 +226,7 @@ export default function Projects() {
                 <div className="grid md:grid-cols-2">
                   {/* Project Image */}
                   <div className="h-64 md:h-72 bg-bg-secondary overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover object-top"
-                    />
+                    <ImageCarousel images={project.images} alt={project.title} />
                   </div>
 
                   {/* Project Info */}
