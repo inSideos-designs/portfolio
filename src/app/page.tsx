@@ -23,34 +23,27 @@ export default function Home() {
             imageUrl={`${basePath}/projects/nppg-pipelines.jpeg`}
           />
           <ProjectCard
+            title="Plan Matrix"
+            category="AI & Full-Stack"
+            description="Cross-document field comparison and IRS-compliance review for 401(k) adoption agreements. Three-backend extraction pipeline (PyMuPDF, OpenCV, Ollama vision) with a YAML rule engine."
+            imageUrl={`${basePath}/projects/plan-matrix-upload.png`}
+          />
+          <ProjectCard
             title="Biotech Unicorns Intelligence"
             category="AI & Full-Stack"
-            description="AI-enriched platform tracking 112 biotech unicorns worth $526B with Gemini-powered patent and SEC analysis."
-            imageUrl={`${basePath}/projects/biotech-v2.png`}
+            description="Real-time platform for Riceberg Ventures tracking 112 biotech unicorns worth $526B with cohort-network views and Gemini-powered patent and SEC analysis."
+            imageUrl={`${basePath}/projects/biotech-cohort-network.png`}
           />
           <ProjectCard
-            title="OilSight"
-            category="AI & Geospatial Analytics"
-            description="ML platform predicting oil & gas hotspots using USGS elevation models and terrain feature extraction across 8 US basins."
-            imageUrl={`${basePath}/projects/oilsight.png`}
-          />
-          <ProjectCard
-            title="Capitol Trades"
-            category="Full-Stack Development"
-            description="Congressional stock trading tracker with real-time API integration, ROI calculations, and party-level analytics."
-            imageUrl={`${basePath}/projects/capitol-trades.png`}
+            title="EV Charging Optimization"
+            category="Optimization & Geospatial"
+            description="Recommends 100 optimal heavy-duty truck DC fast-charging sites across the lower 48 using a ~200K-edge GRAPE network and four Gurobi facility-location formulations. Georgia Tech CSE 6242 capstone."
           />
           <ProjectCard
             title="Midpoint"
             category="Full-Stack Development"
             description="Find the perfect meeting spot between two locations with drive times and nearby restaurant recommendations."
             imageUrl={`${basePath}/projects/midpoint.png`}
-          />
-          <ProjectCard
-            title="Geopolitical Marketing"
-            category="Machine Learning"
-            description="Real-time ML-powered salience scoring to optimize ad spend based on geopolitical events."
-            imageUrl={`${basePath}/projects/geopolitical-dashboard.png`}
           />
         </BentoGrid>
 

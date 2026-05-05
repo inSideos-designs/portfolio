@@ -4,49 +4,69 @@ import { useEffect, useRef, useState } from 'react';
 
 const skillCategories = [
   {
-    title: 'Programming',
+    title: 'Languages',
     skills: [
       { name: 'Python', level: 95 },
-      { name: 'SQL', level: 95 },
-      { name: 'TypeScript', level: 80 },
-      { name: 'JavaScript', level: 80 },
+      { name: 'Advanced SQL (CTEs, window fns)', level: 95 },
+      { name: 'TypeScript / JavaScript', level: 85 },
+      { name: 'R / VBA', level: 75 },
     ],
   },
   {
-    title: 'Machine Learning',
+    title: 'ML & AI',
     skills: [
-      { name: 'Scikit-learn', level: 90 },
-      { name: 'TensorFlow', level: 80 },
-      { name: 'XGBoost', level: 85 },
-      { name: 'RAG Systems', level: 80 },
+      { name: 'XGBoost / Scikit-learn', level: 90 },
+      { name: 'TensorFlow / PyTorch', level: 80 },
+      { name: 'NLP & Document Parsing', level: 85 },
+      { name: 'Local LLM Inference (Ollama)', level: 85 },
+    ],
+  },
+  {
+    title: 'AI-Driven Development',
+    skills: [
+      { name: 'Claude Code / Cursor', level: 95 },
+      { name: 'Agentic Coding Workflows', level: 90 },
+      { name: 'LLM Evaluation Harnesses', level: 85 },
+      { name: 'Spec / Test-Driven AI', level: 85 },
     ],
   },
   {
     title: 'Data Engineering',
     skills: [
-      { name: 'Dagster', level: 90 },
-      { name: 'FastAPI / Flask', level: 85 },
-      { name: 'ETL Pipelines', level: 95 },
-      { name: 'pandas / NumPy', level: 90 },
+      { name: 'Dagster / Airflow', level: 90 },
+      { name: 'FastAPI / Flask / Next.js', level: 85 },
+      { name: 'ETL/ELT + Data Modeling', level: 95 },
+      { name: 'pytest / Validation', level: 85 },
     ],
   },
   {
-    title: 'Cloud & Databases',
+    title: 'Databases & BI',
     skills: [
-      { name: 'Google Cloud', level: 85 },
-      { name: 'BigQuery', level: 85 },
-      { name: 'SQL Server', level: 90 },
-      { name: 'AWS', level: 80 },
+      { name: 'BigQuery / SQL Server', level: 90 },
+      { name: 'Postgres / Redshift', level: 85 },
+      { name: 'Power BI (DAX)', level: 90 },
+      { name: 'Tableau / Looker', level: 80 },
+    ],
+  },
+  {
+    title: 'Cloud & DevOps',
+    skills: [
+      { name: 'GCP (BigQuery, Cloud Run, WIF)', level: 85 },
+      { name: 'AWS (S3, Lambda, Redshift)', level: 80 },
+      { name: 'Docker / Kubernetes', level: 80 },
+      { name: 'GitHub Actions / Jenkins', level: 80 },
     ],
   },
 ];
 
 const tools = [
-  'Python', 'SQL', 'TypeScript', 'React', 'Next.js',
-  'Dagster', 'FastAPI', 'Flask', 'Scikit-learn', 'XGBoost',
-  'Google Cloud', 'BigQuery', 'AWS', 'SQL Server', 'PostgreSQL',
-  'Power BI', 'Tableau', 'Recharts', 'D3.js',
-  'pandas', 'NumPy', 'Docker', 'Git',
+  'Python', 'SQL', 'TypeScript', 'R', 'VBA', 'Rust',
+  'XGBoost', 'Scikit-learn', 'TensorFlow', 'PyTorch', 'Ollama', 'OpenAI API',
+  'Claude Code', 'Cursor', 'NetworkX', 'Markov Chains',
+  'Dagster', 'Airflow', 'FastAPI', 'Flask', 'Next.js', 'pytest',
+  'BigQuery', 'SQL Server', 'PostgreSQL', 'Redshift', 'MongoDB', 'SpatiaLite', 'Trino',
+  'Power BI', 'Tableau', 'Looker', 'Matplotlib', 'Seaborn',
+  'GCP', 'AWS', 'Azure', 'Docker', 'Kubernetes', 'GitHub Actions', 'Gurobi',
 ];
 
 function SkillBar({ name, level, animate }: { name: string; level: number; animate: boolean }) {

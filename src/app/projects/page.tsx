@@ -7,6 +7,16 @@ const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
   const [current, setCurrent] = useState(0);
 
+  if (images.length === 0) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-500/20 via-accent-blue/10 to-purple-500/20">
+        <svg className="w-20 h-20 text-accent-blue/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+    );
+  }
+
   if (images.length <= 1) {
     return (
       <img src={images[0]} alt={alt} className="w-full h-full object-cover object-top" />
@@ -88,20 +98,13 @@ const featuredProjects = [
     github: 'https://github.com/spatadenppg/googlyeyes',
   },
   {
-    title: 'Capitol Trades',
-    description: 'Congressional stock trading tracker aggregating STOCK Act disclosures to analyze trading patterns of US lawmakers. Features real-time data scraping, ROI calculations, and party-level comparisons with interactive visualizations.',
-    images: [`${basePath}/projects/capitol-trades.png`],
-    tags: ['React', 'TypeScript', 'Vite', 'Recharts', 'Tailwind CSS', 'Node.js', 'REST API'],
-    features: ['Live API Integration', 'Top Performer Rankings', 'Sector Analysis', 'Party Comparison'],
-    category: 'engineering',
-  },
-  {
-    title: 'Geopolitical Marketing Dashboard',
-    description: 'Real-time monitoring system for political context and marketing campaign performance. Uses ML-based salience scoring to optimize ad spend timing based on geopolitical events and sentiment analysis.',
-    images: [`${basePath}/projects/geopolitical-dashboard.png`],
-    tags: ['Python', 'Flask', 'Plotly', 'GDELT API', 'BigQuery', 'Machine Learning', 'XGBoost'],
-    features: ['Real-time Salience Tracking', 'Campaign Simulation', 'Engagement Analytics', 'Alert System'],
+    title: 'Electric Truck Charging Point Optimization',
+    description: 'End-to-end pipeline recommending 100 optimal new heavy-duty truck DC fast-charging sites across the lower 48, joining 10 public datasets (FAF5 freight flows, HPMS highway geometry, AFDC stations, EIA grid, NLCD land cover, OSM, Census TIGER, BTS CFS) into SpatiaLite via a four-layer Dagster asset DAG. Built a ~200K-edge weighted freight network in GRAPE; ran four Gurobi facility-location formulations (CFLP, P-Median, Set Cover, Flow-Refueling) under shared budget and vehicle-range constraints to produce a consensus ranking, validated against the AFDC baseline. Georgia Tech CSE 6242 capstone.',
+    images: [],
+    tags: ['Python', 'Dagster', 'SpatiaLite', 'Gurobi', 'GRAPE', 'Leafmap', 'Facility Location'],
+    features: ['10 Public Datasets', '~200K-Edge Freight Graph', '4 Gurobi Formulations', '100 Site Consensus'],
     category: 'ai',
+    github: 'https://github.com/inSideos-designs/ChargingPointOptimization',
   },
   {
     title: 'Biotech Unicorns Intelligence Platform',
@@ -114,14 +117,6 @@ const featuredProjects = [
     features: ['Cohort Network Graph', 'AI-Enriched Patent Analysis', 'SEC Filing Insights', 'Clinical Trials Tracking'],
     category: 'ai',
     link: 'https://frontend-chi-five-99.vercel.app/',
-  },
-  {
-    title: 'OilSight',
-    description: 'Geospatial analytics platform predicting oil & gas production hotspots by analyzing surface topography and subsurface deposit correlations. Uses USGS 3DEP elevation models with ML-driven terrain feature extraction across 8 major US basins.',
-    images: [`${basePath}/projects/oilsight.png`],
-    tags: ['Python', 'Flask', 'D3.js', 'Leaflet', 'XGBoost', 'HDBSCAN', 'GeoPandas'],
-    features: ['Hotspot Prediction', 'Terrain Analysis', 'Basin Comparison', 'Production Analytics'],
-    category: 'ai',
   },
   {
     title: 'Midpoint',
