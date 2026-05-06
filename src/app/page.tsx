@@ -32,12 +32,13 @@ export default function Home() {
             title="Biotech Unicorns Intelligence"
             category="AI & Full-Stack"
             description="Real-time platform for Riceberg Ventures tracking 112 biotech unicorns worth $526B with cohort-network views and Gemini-powered patent and SEC analysis."
-            imageUrl={`${basePath}/projects/biotech-cohort-network.png`}
+            imageUrl={`${basePath}/projects/biotech-demo.gif`}
           />
           <ProjectCard
             title="EV Charging Optimization"
             category="Optimization & Geospatial"
             description="Recommends 100 optimal heavy-duty truck DC fast-charging sites across the lower 48 using a ~200K-edge GRAPE network and four Gurobi facility-location formulations. Georgia Tech CSE 6242 capstone."
+            imageUrl={`${basePath}/projects/ev-charging-map.gif`}
           />
           <ProjectCard
             title="Midpoint"

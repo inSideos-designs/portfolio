@@ -100,7 +100,10 @@ const featuredProjects = [
   {
     title: 'Electric Truck Charging Point Optimization',
     description: 'End-to-end pipeline recommending 100 optimal new heavy-duty truck DC fast-charging sites across the lower 48, joining 10 public datasets (FAF5 freight flows, HPMS highway geometry, AFDC stations, EIA grid, NLCD land cover, OSM, Census TIGER, BTS CFS) into SpatiaLite via a four-layer Dagster asset DAG. Built a ~200K-edge weighted freight network in GRAPE; ran four Gurobi facility-location formulations (CFLP, P-Median, Set Cover, Flow-Refueling) under shared budget and vehicle-range constraints to produce a consensus ranking, validated against the AFDC baseline. Georgia Tech CSE 6242 capstone.',
-    images: [],
+    images: [
+      `${basePath}/projects/ev-charging-map.gif`,
+      `${basePath}/projects/ev-charging-notebook.gif`,
+    ],
     tags: ['Python', 'Dagster', 'SpatiaLite', 'Gurobi', 'GRAPE', 'Leafmap', 'Facility Location'],
     features: ['10 Public Datasets', '~200K-Edge Freight Graph', '4 Gurobi Formulations', '100 Site Consensus'],
     category: 'ai',
@@ -110,6 +113,7 @@ const featuredProjects = [
     title: 'Biotech Unicorns Intelligence Platform',
     description: 'Real-time intelligence platform built for Riceberg Ventures tracking 112 biotech unicorns worth $526B in aggregate value ($4.7B avg). Cohort network view surfaces 169 co-investor and shared-condition edges across sub-categories like AI Drug Discovery, Cancer Detection, and Cell Therapy. AI-enriched patent analysis, SEC filing insights, clinical trials, and news sentiment powered by Gemini 2.5 Flash with automated enrichment pipelines on Google Cloud.',
     images: [
+      `${basePath}/projects/biotech-demo.gif`,
       `${basePath}/projects/biotech-cohort-network.png`,
       `${basePath}/projects/biotech-v2.png`,
     ],
